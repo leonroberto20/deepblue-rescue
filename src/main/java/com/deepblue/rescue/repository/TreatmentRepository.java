@@ -12,6 +12,9 @@ import java.util.List;
 @Repository
 public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
 
+    // Query Method cronológico por código de animal (para TreatmentService)
+    List<Treatment> findByAnimalAnimalCodeOrderByPerformedAtAsc(String animalCode);
+
     // Paso 41: Query Method cronológico por animal
     List<Treatment> findByAnimalIdOrderByPerformedAtAsc(Long animalId);
 
